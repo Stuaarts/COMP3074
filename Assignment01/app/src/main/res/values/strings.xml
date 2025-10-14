@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Pay Calculator</string>
+
+    <string name="title_about">About</string>
+    <string name="menu_about">About</string>
+    <string name="btn_about">About</string>
+    <string name="btn_calculate">Calculate</string>
+
+    <string name="hint_hours">Hours worked</string>
+    <string name="hint_rate">Hourly rate ($)</string>
+    <string name="hint_tax">Tax rate (e.g. 0.2)</string>
+
+    <string name="label_pay">Pay:</string>
+    <string name="label_overtime">Overtime pay:</string>
+    <string name="label_total">Total pay:</string>
+    <string name="label_tax">Tax:</string>
+
+    <string name="section_inputs">Inputs</string>
+    <string name="section_results">Results</string>
+    <string name="about_heading">COMP3074 Assignment 01 – About me</string>
+
+    <string name="about_fullname">Name: Lucas Tavares Criscuolo</string>
+    <string name="about_studentid">Student ID: 101500671</string>
+</resources>
