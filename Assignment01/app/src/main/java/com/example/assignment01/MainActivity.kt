@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import java.text.NumberFormat
 import com.example.assignment01.R
 
 
@@ -24,9 +25,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvTotal: TextView
     private lateinit var tvTax: TextView
 
+    private val currencyFmt = NumberFormat.getCurrencyInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main) // Week 1 pattern. :contentReference[oaicite:6]{index=6}
+        setContentView(R.layout.activity_main)
 
         etHours = findViewById(R.id.etHours)
         etRate = findViewById(R.id.etRate)
@@ -40,6 +43,18 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnCalc).setOnClickListener {
             calculateAndShow()
         }
+
+        findViewById<Button>(R.id.btnReset).setOnClickListener {
+            etHours.text?.clear()
+            etRate.text?.clear()
+            etTax.text?.clear()
+
+            tvPay.text = getString(R.string.label_pay)
+            tvOvertime.text = getString(R.string.label_overtime)
+            tvTotal.text = getString(R.string.label_total)
+            tvTax.text = getString(R.string.label_tax)
+        }
+
 
         findViewById<Button>(R.id.btnAbout).setOnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))
@@ -68,13 +83,12 @@ class MainActivity : AppCompatActivity() {
         val totalPay = basePay + overtimePay
         val tax = basePay * taxRate
 
-        tvPay.text = getString(R.string.label_pay) + " $%.2f".format(basePay)
-        tvOvertime.text = getString(R.string.label_overtime) + " $%.2f".format(overtimePay)
-        tvTotal.text = getString(R.string.label_total) + " $%.2f".format(totalPay)
-        tvTax.text = getString(R.string.label_tax) + " $%.2f".format(tax)
+        tvPay.text      = getString(R.string.label_pay) + " " + currencyFmt.format(basePay)
+        tvOvertime.text = getString(R.string.label_overtime) + " " + currencyFmt.format(overtimePay)
+        tvTotal.text    = getString(R.string.label_total) + " " + currencyFmt.format(totalPay)
+        tvTax.text      = getString(R.string.label_tax) + " " + currencyFmt.format(tax)
     }
 
-    // Menu with "About"
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true

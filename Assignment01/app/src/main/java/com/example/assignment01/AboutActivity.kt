@@ -11,13 +11,11 @@ class AboutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
-        // Enable ActionBar back arrow
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = getString(R.string.title_about)
 
-        // Handle Back button click
         findViewById<Button>(R.id.btnBack).setOnClickListener {
-            finish() // return to MainActivity
+            finish()
         }
     }
 

@@ -60,6 +60,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn_calculate"
                 android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_reset"
+                android:layout_marginTop="8dp"/>
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
