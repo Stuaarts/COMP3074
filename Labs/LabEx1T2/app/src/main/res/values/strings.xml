@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LabEx1T2</string>
+    <string name="my_name">Lucas Tavares Criscuolo</string>
+    <string name="student_id">101500671</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_www">WWW</string>
+    <string name="btn_call">Call</string>
+    <string name="btn_map">Map</string>
+</resources>
